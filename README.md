@@ -1,5 +1,12 @@
 # Crypto Toolkit
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-gold.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue.svg)](https://www.typescriptlang.org/)
+[![Tests](https://img.shields.io/badge/Tests-225%20passing-brightgreen.svg)]()
+[![Node](https://img.shields.io/badge/Node-%3E%3D18-339933.svg)](https://nodejs.org/)
+[![Cryptography](https://img.shields.io/badge/Crypto-Libsodium-blueviolet.svg)](https://doc.libsodium.org/)
+[![NIST](https://img.shields.io/badge/NIST-Compliant-navy.svg)](https://csrc.nist.gov/)
+
 Comprehensive cryptographic utilities library providing secure-by-default primitives for the TE Code stack.
 
 ## Philosophy
@@ -212,7 +219,7 @@ pnpm test
 
 ## License
 
-Private - Part of TE Code security monorepo
+MIT - See [LICENSE](LICENSE) for details.
 
 ## References
 
