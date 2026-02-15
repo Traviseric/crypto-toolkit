@@ -1,13 +1,20 @@
 {
-  "name": "@te-security/crypto-toolkit",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Comprehensive cryptographic utilities for the TE Code stack",
+  "name": "@empowered-humanity/crypto-toolkit",
+  "version": "1.0.0",
+  "description": "Secure-by-default cryptographic utilities — XChaCha20-Poly1305, Argon2id, Ed25519, X25519, JWT, NIST-compliant",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
     "te-crypto": "dist/cli.js"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "sbom.json"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsx watch src/cli.ts",
@@ -17,17 +24,40 @@
     "test:vectors": "vitest run --config vitest.vectors.config.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/",
-    "sbom": "node generate-sbom.js"
+    "sbom": "node generate-sbom.js",
+    "prepublishOnly": "npm run build && npm test"
   },
+  "keywords": [
+    "cryptography",
+    "encryption",
+    "xchacha20",
+    "argon2id",
+    "ed25519",
+    "x25519",
+    "libsodium",
+    "password-hashing",
+    "digital-signatures",
+    "jwt",
+    "nist",
+    "security",
+    "aead",
+    "key-exchange"
+  ],
+  "author": "Empowered Humanity <security@empoweredhumanity.ai>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/empowered-humanity/crypto-toolkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/empowered-humanity/crypto-toolkit/issues"
+  },
+  "homepage": "https://github.com/empowered-humanity/crypto-toolkit#readme",
   "dependencies": {
     "sodium-native": "^4.0.0",
-    "secrets.js-grempe": "^2.0.0",
     "jose": "^5.0.0",
-    "snarkjs": "^0.7.0",
     "commander": "^12.0.0",
-    "chalk": "^5.3.0",
-    "ora": "^8.0.0",
-    "@te-security/shared": "workspace:*"
+    "chalk": "^5.3.0"
   },
   "devDependencies": {
     "typescript": "^5.7.0",
@@ -41,28 +71,23 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "default": "./dist/index.js"
     },
     "./aead": {
       "types": "./dist/core/aead.d.ts",
-      "import": "./dist/core/aead.js"
+      "default": "./dist/core/aead.js"
     },
     "./password": {
       "types": "./dist/core/password.d.ts",
-      "import": "./dist/core/password.js"
+      "default": "./dist/core/password.js"
     },
     "./signatures": {
       "types": "./dist/asymmetric/ed25519.d.ts",
-      "import": "./dist/asymmetric/ed25519.js"
+      "default": "./dist/asymmetric/ed25519.js"
     },
     "./jwt": {
       "types": "./dist/jwt/index.d.ts",
-      "import": "./dist/jwt/index.js"
-    },
-    "./streaming": {
-      "types": "./dist/streaming/index.d.ts",
-      "import": "./dist/streaming/index.js"
+      "default": "./dist/jwt/index.js"
     }
   }
 }
